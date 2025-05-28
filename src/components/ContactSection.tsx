@@ -25,14 +25,8 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 bg-navy-900 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-electric-400/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-coral-400/10 rounded-full blur-3xl"></div>
-      </div>
-      
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+    <section id="contact" className="py-20 bg-navy-900 relative">
+      <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Let's Work Together
@@ -93,11 +87,11 @@ const ContactSection = () => {
                   className="w-full px-4 py-3 bg-navy-800 border border-navy-700 rounded-xl text-white focus:outline-none focus:border-electric-400 transition-colors"
                 >
                   <option value="">Select a project type</option>
-                  <option value="landing-page">Landing Page (₹1,499)</option>
-                  <option value="portfolio">Portfolio Website (₹2,499)</option>
-                  <option value="business">Business Website (₹3,999)</option>
-                  <option value="ai-to-code">AI to Code (₹999)</option>
-                  <option value="redesign">Website Redesign (₹2,499)</option>
+                  <option value="landing-page">Landing Page ($199)</option>
+                  <option value="portfolio">Portfolio Website ($299)</option>
+                  <option value="business">Business Website ($499)</option>
+                  <option value="ai-to-code">AI to Code ($149)</option>
+                  <option value="redesign">Website Redesign ($299)</option>
                   <option value="custom">Custom Project</option>
                 </select>
               </div>

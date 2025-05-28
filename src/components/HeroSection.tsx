@@ -38,7 +38,7 @@ const HeroSection = () => {
                 onClick={() => scrollToSection('contact')}
                 className="bg-gradient-to-r from-electric-500 to-coral-500 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:from-electric-400 hover:to-coral-400"
               >
-                Let's Work Together
+                Start Your Project
               </button>
               <button 
                 onClick={() => scrollToSection('projects')}
