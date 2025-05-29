@@ -136,7 +136,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-white mb-2">Fast Delivery</h4>
-                    <p className="text-navy-200">AI-enhanced development means faster turnaround times without compromising quality.</p>
+                    <p className="text-gray-300">AI-enhanced development means faster turnaround times without compromising quality.</p>
                   </div>
                 </div>
                 
@@ -146,7 +146,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-white mb-2">Affordable Pricing</h4>
-                    <p className="text-navy-200">Beginner-friendly rates that provide excellent value for modern, professional websites.</p>
+                    <p className="text-gray-300">Beginner-friendly rates that provide excellent value for modern, professional websites.</p>
                   </div>
                 </div>
                 
@@ -156,7 +156,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-white mb-2">AI-Enhanced</h4>
-                    <p className="text-navy-200">Leveraging cutting-edge AI tools to create innovative solutions and optimize workflows.</p>
+                    <p className="text-gray-300">Leveraging cutting-edge AI tools to create innovative solutions and optimize workflows.</p>
                   </div>
                 </div>
                 
@@ -166,17 +166,17 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-bold text-white mb-2">Quality Assured</h4>
-                    <p className="text-navy-200">Every project includes responsive design, cross-browser compatibility, and ongoing support.</p>
+                    <p className="text-gray-300">Every project includes responsive design, cross-browser compatibility, and ongoing support.</p>
                   </div>
                 </div>
               </div>
               
               <div className="mt-8 pt-8 border-t border-navy-700">
-                <div className="flex items-center space-x-3 text-navy-200">
+                <div className="flex items-center space-x-3 text-gray-200">
                   <Mail size={20} className="text-electric-400" />
                   <span>ujwal.developer@email.com</span>
                 </div>
-                <p className="text-sm text-navy-300 mt-2">
+                <p className="text-sm text-gray-400 mt-2">
                   I typically respond within 2-4 hours during business hours
                 </p>
               </div>
