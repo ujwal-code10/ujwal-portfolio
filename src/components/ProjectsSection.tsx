@@ -1,3 +1,4 @@
+
 import { ChevronRight } from 'lucide-react';
 
 const ProjectsSection = () => {
@@ -16,16 +17,16 @@ const ProjectsSection = () => {
         
         {/* All projects now have consistent grid layout */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-          {/* Featured Project - now same size as others */}
+          {/* Featured Project - now with real screenshot */}
           <div className="animate-scale-in">
             <div className="bg-gradient-to-br from-navy-50 to-electric-50 rounded-2xl lg:rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full">
-              <div className="h-32 sm:h-36 lg:h-40 bg-gradient-to-br from-electric-400 to-coral-400 relative overflow-hidden">
-                <div className="absolute inset-0 flex items-center justify-center text-white">
-                  <div className="text-center">
-                    <div className="text-2xl sm:text-3xl lg:text-4xl mb-1 sm:mb-2">🎯</div>
-                    <h3 className="text-sm sm:text-base lg:text-lg font-bold">Elevate Portfolio</h3>
-                  </div>
-                </div>
+              <div className="h-32 sm:h-36 lg:h-40 relative overflow-hidden">
+                <img 
+                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=400&fit=crop&crop=top"
+                  alt="Elevate Portfolio Homepage Screenshot"
+                  className="w-full h-full object-cover object-top"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               </div>
               <div className="p-4 sm:p-6 lg:p-8">
                 <div className="flex items-center justify-between mb-3 lg:mb-4">
