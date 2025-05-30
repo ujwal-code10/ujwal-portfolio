@@ -17,32 +17,32 @@ const HeroSection = () => {
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-coral-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
       
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 flex items-center min-h-screen">
-        <div className="grid lg:grid-cols-2 gap-12 items-center w-full">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center min-h-screen">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center w-full">
           <div className="text-white animate-fade-in-up">
-            <h1 className="text-4xl lg:text-6xl font-bold mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 lg:mb-6 leading-tight">
               Hi, I'm{' '}
               <span className="bg-gradient-to-r from-electric-400 to-coral-400 bg-clip-text text-transparent">
                 Ujwal
               </span>
             </h1>
-            <h2 className="text-xl lg:text-3xl font-light mb-6 text-navy-100">
+            <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-light mb-4 lg:mb-6 text-navy-100">
               Freelance Web Designer & Developer
             </h2>
-            <p className="text-lg lg:text-xl text-navy-200 mb-8 leading-relaxed max-w-lg">
+            <p className="text-base sm:text-lg lg:text-xl text-navy-200 mb-6 lg:mb-8 leading-relaxed max-w-lg">
               I create stunning, modern websites using AI-enhanced development tools to deliver 
               fast, custom solutions without compromising on quality or originality.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="bg-gradient-to-r from-electric-500 to-coral-500 text-white px-8 py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:from-electric-400 hover:to-coral-400"
+                className="bg-gradient-to-r from-electric-500 to-coral-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:from-electric-400 hover:to-coral-400 text-sm sm:text-base"
               >
                 Start Your Project
               </button>
               <button 
                 onClick={() => scrollToSection('projects')}
-                className="border-2 border-electric-400 text-electric-400 px-8 py-4 rounded-full font-semibold hover:bg-electric-400 hover:text-navy-900 transition-all duration-300"
+                className="border-2 border-electric-400 text-electric-400 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:bg-electric-400 hover:text-navy-900 transition-all duration-300 text-sm sm:text-base"
               >
                 View My Work
               </button>
@@ -51,12 +51,12 @@ const HeroSection = () => {
           
           <div className="lg:flex justify-center animate-scale-in" style={{ animationDelay: '0.3s' }}>
             <div className="relative">
-              <div className="w-64 h-64 lg:w-80 lg:h-80 bg-gradient-to-br from-electric-400 to-coral-400 rounded-3xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500"></div>
-              <div className="absolute inset-4 bg-navy-800 rounded-3xl flex items-center justify-center">
+              <div className="w-48 h-48 sm:w-64 sm:h-64 lg:w-72 lg:h-72 xl:w-80 xl:h-80 bg-gradient-to-br from-electric-400 to-coral-400 rounded-3xl shadow-2xl transform rotate-3 hover:rotate-0 transition-transform duration-500"></div>
+              <div className="absolute inset-3 sm:inset-4 bg-navy-800 rounded-3xl flex items-center justify-center">
                 <div className="text-center text-white">
-                  <div className="text-4xl lg:text-6xl mb-4">💻</div>
-                  <p className="text-sm lg:text-lg font-medium">AI-Enhanced</p>
-                  <p className="text-sm lg:text-lg font-medium">Development</p>
+                  <div className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl mb-2 sm:mb-4">💻</div>
+                  <p className="text-xs sm:text-sm lg:text-base xl:text-lg font-medium">AI-Enhanced</p>
+                  <p className="text-xs sm:text-sm lg:text-base xl:text-lg font-medium">Development</p>
                 </div>
               </div>
             </div>
