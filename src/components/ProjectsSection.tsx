@@ -1,5 +1,5 @@
 
-import { Link, ChevronRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
 const ProjectsSection = () => {
   return (
@@ -22,8 +22,8 @@ const ProjectsSection = () => {
               <div className="h-64 bg-gradient-to-br from-electric-400 to-coral-400 relative overflow-hidden">
                 <div className="absolute inset-0 flex items-center justify-center text-white">
                   <div className="text-center">
-                    <div className="text-6xl mb-4">🚀</div>
-                    <h3 className="text-2xl font-bold">Modern E-commerce Platform</h3>
+                    <div className="text-6xl mb-4">🎯</div>
+                    <h3 className="text-2xl font-bold">Elevate – Personal Portfolio</h3>
                   </div>
                 </div>
               </div>
@@ -32,25 +32,35 @@ const ProjectsSection = () => {
                   <span className="bg-green-100 text-green-800 text-sm font-medium px-3 py-1 rounded-full">
                     Completed
                   </span>
-                  <Link size={20} className="text-electric-500 hover:text-electric-600 cursor-pointer" />
+                  <a
+                    href="https://elevate-personal-page.vercel.app"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-electric-500 hover:text-electric-600 text-sm font-medium"
+                  >
+                    Visit Live
+                  </a>
                 </div>
                 <h3 className="text-2xl font-bold text-navy-900 mb-4">
-                  Full-Stack E-commerce Solution
+                  Responsive Portfolio Landing Page
                 </h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  A complete e-commerce platform built with React and modern AI tools. Features include 
-                  product catalog, shopping cart, payment integration, and admin dashboard. 
-                  Delivered in just 5 days using AI-accelerated development.
+                  A modern and responsive personal portfolio landing page built to showcase a freelancer's work, skills, and contact details. Designed with a clean layout, smooth animations, and optimized for all devices.
                 </p>
                 <div className="flex flex-wrap gap-2 mb-6">
                   <span className="bg-electric-100 text-electric-800 text-sm px-3 py-1 rounded-full">React</span>
-                  <span className="bg-electric-100 text-electric-800 text-sm px-3 py-1 rounded-full">TypeScript</span>
                   <span className="bg-electric-100 text-electric-800 text-sm px-3 py-1 rounded-full">Tailwind CSS</span>
-                  <span className="bg-coral-100 text-coral-800 text-sm px-3 py-1 rounded-full">AI-Enhanced</span>
+                  <span className="bg-electric-100 text-electric-800 text-sm px-3 py-1 rounded-full">JavaScript</span>
+                  <span className="bg-coral-100 text-coral-800 text-sm px-3 py-1 rounded-full">Responsive Design</span>
                 </div>
-                <button className="flex items-center text-electric-600 font-semibold hover:text-electric-700 transition-colors">
+                <a
+                  href="https://elevate-personal-page.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center text-electric-600 font-semibold hover:text-electric-700 transition-colors"
+                >
                   View Project <ChevronRight size={20} className="ml-1" />
-                </button>
+                </a>
               </div>
             </div>
           </div>
