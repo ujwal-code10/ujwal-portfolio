@@ -1,4 +1,3 @@
-
 import { ChevronDown } from 'lucide-react';
 
 const HeroSection = () => {
@@ -6,6 +5,16 @@ const HeroSection = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleStartProject = () => {
+    // Same logic as CTA section
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = 'mailto:ujwal@example.com?subject=New Project Inquiry';
     }
   };
 
@@ -35,7 +44,7 @@ const HeroSection = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <button 
-                onClick={() => scrollToSection('contact')}
+                onClick={handleStartProject}
                 className="bg-gradient-to-r from-electric-500 to-coral-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:from-electric-400 hover:to-coral-400 text-sm sm:text-base"
               >
                 Start Your Project

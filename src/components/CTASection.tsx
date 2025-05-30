@@ -1,4 +1,3 @@
-
 import { Mail, ArrowRight } from 'lucide-react';
 
 const CTASection = () => {
@@ -6,6 +5,18 @@ const CTASection = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleStartProject = () => {
+    // Scroll to contact section or trigger contact action
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // If no contact section exists, you can add alternative action here
+      // For now, we'll create a simple alert or you can modify this behavior
+      window.location.href = 'mailto:ujwal@example.com?subject=New Project Inquiry';
     }
   };
 
@@ -29,7 +40,7 @@ const CTASection = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 justify-center items-center mb-8 lg:mb-12">
             <button 
-              onClick={() => scrollToSection('contact')}
+              onClick={handleStartProject}
               className="group bg-gradient-to-r from-electric-500 to-coral-500 text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-full font-bold text-sm sm:text-base lg:text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:from-electric-400 hover:to-coral-400 flex items-center gap-2 lg:gap-3"
             >
               <Mail size={20} className="sm:size-6" />
