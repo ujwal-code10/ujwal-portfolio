@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Mail, ChevronRight } from 'lucide-react';
 
@@ -62,7 +61,7 @@ const ContactSection = () => {
           <h2 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-6 lg:mb-8">
             Let's Work Together
           </h2>
-          <p className="text-lg sm:text-xl lg:text-2xl text-navy-200 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl lg:text-2xl text-white max-w-4xl mx-auto leading-relaxed">
             Ready to bring your vision to life with AI-enhanced development? 
             Let's discuss your project and create something amazing together.
           </p>

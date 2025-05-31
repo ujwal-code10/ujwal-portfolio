@@ -1,3 +1,4 @@
+
 import { Mail, ArrowRight } from 'lucide-react';
 
 const CTASection = () => {
@@ -9,15 +10,17 @@ const CTASection = () => {
   };
 
   const handleStartProject = () => {
-    // Scroll to contact section or trigger contact action
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      // If no contact section exists, you can add alternative action here
-      // For now, we'll create a simple alert or you can modify this behavior
-      window.location.href = 'mailto:ujwal@example.com?subject=New Project Inquiry';
-    }
+    console.log('Start Project button clicked');
+    // Scroll to contact section
+    setTimeout(() => {
+      const contactSection = document.getElementById('contact');
+      if (contactSection) {
+        contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        console.log('Contact section not found, opening email');
+        window.location.href = 'mailto:magarujal6@gmail.com?subject=New Project Inquiry';
+      }
+    }, 100);
   };
 
   return (
@@ -41,7 +44,7 @@ const CTASection = () => {
           <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 justify-center items-center mb-8 lg:mb-12">
             <button 
               onClick={handleStartProject}
-              className="group bg-gradient-to-r from-electric-500 to-coral-500 text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-full font-bold text-sm sm:text-base lg:text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:from-electric-400 hover:to-coral-400 flex items-center gap-2 lg:gap-3"
+              className="group bg-gradient-to-r from-electric-500 to-coral-500 text-white px-6 sm:px-8 lg:px-10 py-3 sm:py-4 lg:py-5 rounded-full font-bold text-sm sm:text-base lg:text-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:from-electric-400 hover:to-coral-400 flex items-center gap-2 lg:gap-3 cursor-pointer"
             >
               <Mail size={20} className="sm:size-6" />
               Start Your Project Today
@@ -49,7 +52,7 @@ const CTASection = () => {
             </button>
             
             <a 
-              href="mailto:ujwal@example.com" 
+              href="mailto:magarujal6@gmail.com" 
               className="text-electric-300 hover:text-electric-200 font-semibold text-sm sm:text-base lg:text-lg transition-colors flex items-center gap-2"
             >
               Or email me directly
