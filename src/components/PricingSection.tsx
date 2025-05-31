@@ -1,5 +1,13 @@
 
 import { Clock, CheckCircle } from 'lucide-react';
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "./ui/table";
 
 const PricingSection = () => {
   const pricingData = [
@@ -48,38 +56,58 @@ const PricingSection = () => {
           </p>
         </div>
         
-        <div className="overflow-x-auto">
-          <div className="min-w-full bg-white rounded-xl lg:rounded-2xl shadow-lg overflow-hidden">
-            <div className="grid grid-cols-4 gap-0 bg-navy-900 text-white font-semibold">
-              <div className="p-3 sm:p-4 lg:p-6 text-center text-xs sm:text-sm lg:text-base">Service</div>
-              <div className="p-3 sm:p-4 lg:p-6 text-center text-xs sm:text-sm lg:text-base">Price</div>
-              <div className="p-3 sm:p-4 lg:p-6 text-center text-xs sm:text-sm lg:text-base">Delivery Time</div>
-              <div className="p-3 sm:p-4 lg:p-6 text-center text-xs sm:text-sm lg:text-base">Includes</div>
-            </div>
-            
-            {pricingData.map((item, index) => (
-              <div 
-                key={index} 
-                className={`grid grid-cols-4 gap-0 ${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-electric-50 transition-colors duration-200 animate-fade-in-up`}
-                style={{ animationDelay: `${0.1 * index}s` }}
-              >
-                <div className="p-3 sm:p-4 lg:p-6 font-medium text-navy-900 border-r border-gray-200 text-xs sm:text-sm lg:text-base">
-                  {item.service}
-                </div>
-                <div className="p-3 sm:p-4 lg:p-6 text-center font-bold text-electric-600 border-r border-gray-200 text-xs sm:text-sm lg:text-base">
-                  {item.price}
-                </div>
-                <div className="p-3 sm:p-4 lg:p-6 text-center text-navy-700 border-r border-gray-200 flex items-center justify-center gap-1 sm:gap-2">
-                  <Clock size={12} className="text-coral-500 sm:size-4" />
-                  <span className="text-xs sm:text-sm lg:text-base">{item.delivery}</span>
-                </div>
-                <div className="p-3 sm:p-4 lg:p-6 text-gray-600 flex items-center gap-1 sm:gap-2">
-                  <CheckCircle size={12} className="text-green-500 flex-shrink-0 sm:size-4" />
-                  <span className="text-xs sm:text-sm lg:text-base">{item.includes}</span>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="bg-white rounded-xl lg:rounded-2xl shadow-lg overflow-hidden">
+          <Table>
+            <TableHeader>
+              <TableRow className="bg-navy-900 hover:bg-navy-900">
+                <TableHead className="text-white font-semibold text-xs sm:text-sm lg:text-base">Service</TableHead>
+                <TableHead className="text-white font-semibold text-center text-xs sm:text-sm lg:text-base">Price</TableHead>
+                <TableHead className="text-white font-semibold text-center text-xs sm:text-sm lg:text-base hidden sm:table-cell">Delivery</TableHead>
+                <TableHead className="text-white font-semibold text-xs sm:text-sm lg:text-base hidden md:table-cell">Includes</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {pricingData.map((item, index) => (
+                <TableRow 
+                  key={index}
+                  className={`${index % 2 === 0 ? 'bg-gray-50' : 'bg-white'} hover:bg-electric-50 transition-colors duration-200 animate-fade-in-up`}
+                  style={{ animationDelay: `${0.1 * index}s` }}
+                >
+                  <TableCell className="font-medium text-navy-900 text-xs sm:text-sm lg:text-base">
+                    <div>
+                      <div className="font-semibold">{item.service}</div>
+                      {/* Show delivery and includes on mobile */}
+                      <div className="sm:hidden mt-1 space-y-1">
+                        <div className="flex items-center gap-1 text-navy-700">
+                          <Clock size={12} className="text-coral-500" />
+                          <span className="text-xs">{item.delivery}</span>
+                        </div>
+                        <div className="md:hidden flex items-center gap-1 text-gray-600">
+                          <CheckCircle size={12} className="text-green-500 flex-shrink-0" />
+                          <span className="text-xs">{item.includes}</span>
+                        </div>
+                      </div>
+                    </div>
+                  </TableCell>
+                  <TableCell className="text-center font-bold text-electric-600 text-xs sm:text-sm lg:text-base">
+                    {item.price}
+                  </TableCell>
+                  <TableCell className="text-center text-navy-700 hidden sm:table-cell">
+                    <div className="flex items-center justify-center gap-1 sm:gap-2">
+                      <Clock size={12} className="text-coral-500 sm:size-4" />
+                      <span className="text-xs sm:text-sm lg:text-base">{item.delivery}</span>
+                    </div>
+                  </TableCell>
+                  <TableCell className="text-gray-600 hidden md:table-cell">
+                    <div className="flex items-center gap-1 sm:gap-2">
+                      <CheckCircle size={12} className="text-green-500 flex-shrink-0 sm:size-4" />
+                      <span className="text-xs sm:text-sm lg:text-base">{item.includes}</span>
+                    </div>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
         </div>
         
         <div className="mt-8 lg:mt-12 text-center animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
