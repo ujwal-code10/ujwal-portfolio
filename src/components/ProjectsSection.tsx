@@ -68,9 +68,40 @@ const ProjectsSection = () => {
           {/* Coming Soon Projects - keeping same structure */}
           {[
             {
-              title: "Restaurant Landing Page",
-              description: "Modern, responsive landing page for a local restaurant with online ordering system.",
-              tech: ["React", "Animations", "Mobile-First"]
+              <div className="w-full sm:w-1/2 lg:w-1/3 p-2">
+  <div className="bg-white shadow-md rounded-lg p-4 h-full flex flex-col justify-between">
+    <div>
+      <a
+        href="https://v0-react-landing-page-template-ashen.vercel.app"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="text-electric-500 hover:text-electric-600 text-xs sm:text-sm font-medium"
+      >
+        Visit Live
+      </a>
+    </div>
+    <h3 className="text-base sm:text-lg lg:text-xl font-bold text-navy-900 mb-3 lg:mb-4">
+      SaaS Landing Page
+    </h3>
+    <p className="text-xs sm:text-sm lg:text-base text-gray-600 mb-4 lg:mb-6 leading-relaxed">
+      Responsive and modern landing page for a fictional project management SaaS product. Features clean layout, CTA focus, and built with Tailwind and React.
+    </p>
+    <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 lg:mb-6">
+      <span className="bg-electric-100 text-electric-800 text-xs px-2 sm:px-3 py-1 rounded-full">React</span>
+      <span className="bg-electric-100 text-electric-800 text-xs px-2 sm:px-3 py-1 rounded-full">Tailwind</span>
+      <span className="bg-coral-100 text-coral-800 text-xs px-2 sm:px-3 py-1 rounded-full">Responsive</span>
+    </div>
+    <a
+      href="https://v0-react-landing-page-template-ashen.vercel.app"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="flex items-center text-electric-600 font-semibold hover:text-electric-700 transition-colors text-sm sm:text-base"
+    >
+      View Project <ChevronRight size={16} className="ml-1 sm:ml-2" />
+    </a>
+  </div>
+</div>
+
             },
             {
               title: "Portfolio Website",
