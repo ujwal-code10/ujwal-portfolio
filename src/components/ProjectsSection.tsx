@@ -72,7 +72,7 @@ const ProjectsSection = () => {
   <div className="bg-white shadow-md rounded-lg p-4 h-full flex flex-col justify-between">
     <div>
       <a
-        href="https://v0-react-landing-page-template-ashen.vercel.app"
+        href="https://saas-project-landing-page-pi.vercel.app/"
         target="_blank"
         rel="noopener noreferrer"
         className="text-electric-500 hover:text-electric-600 text-xs sm:text-sm font-medium"
