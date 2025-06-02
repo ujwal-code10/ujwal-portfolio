@@ -4,7 +4,7 @@ const ProjectsSection = () => {
   const projects = [
     {
       <img 
-        src="https://images.unsplash.com/photo-1612831455543-4c5c29e1696b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400&q=80"
+        src="saas.jpg"
       title: "SaaS Landing Page",
       description: "Responsive and modern landing page for a fictional project management SaaS product. Features clean layout, CTA focus, and built with Tailwind and React.",
       href: "https://saas-project-landing-page-pi.vercel.app/",
