@@ -52,25 +52,27 @@ const AboutContent = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true }}
-      className="space-y-10"
+      className="space-y-12"
     >
       <motion.div 
         variants={itemVariants}
-        className="prose prose-lg max-w-none"
+        className="prose prose-lg max-w-none bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
       >
-        <p className="text-lg leading-relaxed text-gray-700">
-          I'm Ujwal, a frontend developer focused on building fast, responsive, and user-friendly websites. 
-          I blend modern technologies with a strong design sense to create clean, accessible digital experiences.
-        </p>
-        <p className="text-lg leading-relaxed text-gray-700">
-          My workflow is optimized for speed and quality, allowing me to go from idea to polished product efficiently. 
-          Whether it's prototyping, refining UI, or launching a full project, I prioritize usability, performance, 
-          and clarity in everything I build.
-        </p>
-        <p className="text-lg leading-relaxed text-gray-700">
-          I believe in thoughtful design, clean code, and staying ahead of the curve — constantly learning, 
-          iterating, and improving.
-        </p>
+        <div className="max-w-3xl mx-auto space-y-6">
+          <p className="text-lg leading-relaxed text-gray-700">
+            I'm Ujwal, a frontend developer focused on building fast, responsive, and user-friendly websites. 
+            I blend modern technologies with a strong design sense to create clean, accessible digital experiences.
+          </p>
+          <p className="text-lg leading-relaxed text-gray-700">
+            My workflow is optimized for speed and quality, allowing me to go from idea to polished product efficiently. 
+            Whether it's prototyping, refining UI, or launching a full project, I prioritize usability, performance, 
+            and clarity in everything I build.
+          </p>
+          <p className="text-lg leading-relaxed text-gray-700">
+            I believe in thoughtful design, clean code, and staying ahead of the curve — constantly learning, 
+            iterating, and improving.
+          </p>
+        </div>
       </motion.div>
 
       <motion.div 
@@ -105,7 +107,7 @@ const AboutContent = () => {
         <h3 className="text-xl font-bold text-navy-900 mb-6">
           My Development Philosophy
         </h3>
-        <ul className="space-y-4">
+        <ul className="space-y-4 max-w-3xl mx-auto">
           {[
             "Build for real users, even in practice projects",
             "Focus on clean, maintainable code from day one",

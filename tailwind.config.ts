@@ -1,4 +1,3 @@
-
 import type { Config } from "tailwindcss";
 
 export default {
@@ -63,25 +62,25 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Portfolio custom colors
+				// Portfolio custom colors - updated to be more subtle
 				navy: {
-					50: '#f0f4ff',
-					100: '#e0eaff',
-					500: '#1e40af',
-					600: '#1d4ed8',
+					50: '#f5f7fa',
+					100: '#edf0f7',
+					500: '#2a4365',
+					600: '#1a365d',
 					700: '#1e3a8a',
 					800: '#1e293b',
 					900: '#0f172a'
 				},
 				electric: {
-					400: '#60a5fa',
-					500: '#3b82f6',
-					600: '#2563eb'
+					400: '#93c5fd',  // Lighter blue
+					500: '#3b82f6',  // More muted blue
+					600: '#2563eb'   // Slightly darker
 				},
 				coral: {
-					400: '#fb7185',
-					500: '#f43f5e',
-					600: '#e11d48'
+					400: '#fca5a5',  // Lighter coral
+					500: '#f87171',  // More muted coral
+					600: '#ef4444'   // Slightly darker
 				}
 			},
 			borderRadius: {
@@ -91,20 +90,12 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' }
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' }
 				},
 				'fade-in': {
 					'0%': {
