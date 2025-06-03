@@ -1,7 +1,7 @@
-
 import Navigation from '../components/Navigation';
 import HeroSection from '../components/HeroSection';
 import AboutSection from '../components/AboutSection';
+import AIToolsSection from '../components/AIToolsSection';
 import ProjectsSection from '../components/ProjectsSection';
 import PricingSection from '../components/PricingSection';
 import WorkflowSection from '../components/WorkflowSection';
@@ -17,6 +17,7 @@ const Index = () => {
       <main className="relative">
         <HeroSection />
         <AboutSection />
+        <AIToolsSection />
         <ProjectsSection />
         <PricingSection />
         <WorkflowSection />

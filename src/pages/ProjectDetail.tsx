@@ -1,5 +1,6 @@
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
+import ProjectBuildStory from '../components/ProjectBuildStory';
 
 const projects = {
   'saas-landing': {
@@ -96,63 +97,70 @@ const ProjectDetail = () => {
           Back to Projects
         </Link>
 
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
-          <div className="h-64 sm:h-72 lg:h-96 relative">
-            <img
-              src={project.images[0]}
-              alt={project.title}
-              className="w-full h-full object-cover"
-            />
-          </div>
-
-          <div className="p-6 sm:p-8 lg:p-10">
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 mb-4">
-              {project.title}
-            </h1>
-
-            <div className="flex flex-wrap gap-2 mb-6">
-              {project.tech.map((tech, index) => (
-                <span
-                  key={index}
-                  className="bg-electric-100 text-electric-800 px-3 py-1 rounded-full text-sm"
-                >
-                  {tech}
-                </span>
-              ))}
+        <div className="space-y-8">
+          <div className="bg-white rounded-2xl shadow-xl overflow-hidden">
+            <div className="h-64 sm:h-72 lg:h-96 relative">
+              <img
+                src={project.images[0]}
+                alt={project.title}
+                className="w-full h-full object-cover"
+              />
             </div>
 
-            <div className="prose prose-lg max-w-none mb-8">
-              {project.fullDescription.split('\n').map((paragraph, index) => (
-                <p key={index} className="mb-4 text-gray-600">
-                  {paragraph}
-                </p>
-              ))}
-            </div>
+            <div className="p-6 sm:p-8 lg:p-10">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 mb-4">
+                {project.title}
+              </h1>
 
-            <div className="mb-8">
-              <h2 className="text-xl font-bold text-navy-900 mb-4">Key Features</h2>
-              <ul className="grid sm:grid-cols-2 gap-3">
-                {project.features.map((feature, index) => (
-                  <li
+              <div className="flex flex-wrap gap-2 mb-6">
+                {project.tech.map((tech, index) => (
+                  <span
                     key={index}
-                    className="flex items-center text-gray-600"
+                    className="bg-electric-100 text-electric-800 px-3 py-1 rounded-full text-sm"
                   >
-                    <span className="w-2 h-2 bg-electric-500 rounded-full mr-2"></span>
-                    {feature}
-                  </li>
+                    {tech}
+                  </span>
                 ))}
-              </ul>
-            </div>
+              </div>
 
-            {project.demoUrl && (
-              <button
-                onClick={handleDemoClick}
-                className="inline-block bg-electric-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-electric-700 transition-colors"
-              >
-                View Live Demo
-              </button>
-            )}
+              <div className="prose prose-lg max-w-none mb-8">
+                {project.fullDescription.split('\n').map((paragraph, index) => (
+                  <p key={index} className="mb-4 text-gray-600">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
+
+              <div className="mb-8">
+                <h2 className="text-xl font-bold text-navy-900 mb-4">Key Features</h2>
+                <ul className="grid sm:grid-cols-2 gap-3">
+                  {project.features.map((feature, index) => (
+                    <li
+                      key={index}
+                      className="flex items-center text-gray-600"
+                    >
+                      <span className="w-2 h-2 bg-electric-500 rounded-full mr-2"></span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {project.demoUrl && (
+                <button
+                  onClick={handleDemoClick}
+                  className="inline-block bg-electric-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-electric-700 transition-colors"
+                >
+                  View Live Demo
+                </button>
+              )}
+            </div>
           </div>
+
+          {/* Add ProjectBuildStory component */}
+          {projectId && (projectId === 'saas-landing' || projectId === 'elevate-portfolio') && (
+            <ProjectBuildStory projectId={projectId} />
+          )}
         </div>
       </div>
     </div>
