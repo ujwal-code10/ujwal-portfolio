@@ -5,11 +5,12 @@ const ProjectsSection = () => {
   const projects = [
     {
       id: "saas-landing",
-      src: "saas.jpg",
+      src: "/saas.jpg",
       title: "SaaS Landing Page",
       description: "Responsive and modern landing page for a fictional project management SaaS product. Features clean layout, CTA focus, and built with Tailwind and React.",
       tech: ["React", "Tailwind", "Responsive"],
-      live: true
+      live: true,
+      demoPath: "/project/saas-landing/demo"
     },
     {
       title: "Portfolio Website",
@@ -55,14 +56,12 @@ const ProjectsSection = () => {
                   <span className="bg-green-100 text-green-800 text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 rounded-full">
                     Completed
                   </span>
-                  <a
-                    href="https://elevate-personal-page.vercel.app"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <Link
+                    to="/project/elevate-portfolio/demo"
                     className="text-electric-500 hover:text-electric-600 text-xs sm:text-sm font-medium"
                   >
                     Visit Live
-                  </a>
+                  </Link>
                 </div>
                 <h3 className="text-base sm:text-lg lg:text-xl font-bold text-navy-900 mb-3 lg:mb-4">
                   Personal Portfolio Page
@@ -112,15 +111,13 @@ const ProjectsSection = () => {
                     <span className={`text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 rounded-full ${project.live ? 'bg-green-100 text-green-800' : 'bg-orange-100 text-orange-800'}`}>
                       {project.live ? 'Completed' : 'Coming Soon'}
                     </span>
-                    {project.live && (
-                      <a
-                        href="https://saas-project-landing-page-pi.vercel.app/"
-                        target="_blank"
-                        rel="noopener noreferrer"
+                    {project.live && project.demoPath && (
+                      <Link
+                        to={project.demoPath}
                         className="text-electric-500 hover:text-electric-600 text-xs sm:text-sm font-medium"
                       >
                         Visit Live
-                      </a>
+                      </Link>
                     )}
                   </div>
                   <h3 className="text-base sm:text-lg lg:text-xl font-bold text-navy-900 mb-3 lg:mb-4">

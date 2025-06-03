@@ -1,4 +1,4 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
 
 const projects = {
@@ -19,7 +19,7 @@ const projects = {
     `,
     tech: ["React", "Tailwind", "Responsive"],
     images: [
-      "saas.jpg",
+      "/saas.jpg",
       // Add more image URLs
     ],
     demoUrl: "https://saas-project-landing-page-pi.vercel.app/",
@@ -64,6 +64,7 @@ const projects = {
 
 const ProjectDetail = () => {
   const { projectId } = useParams();
+  const navigate = useNavigate();
   const project = projects[projectId as keyof typeof projects];
 
   if (!project) {
@@ -78,6 +79,11 @@ const ProjectDetail = () => {
       </div>
     );
   }
+
+  const handleDemoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    navigate(`/project/${projectId}/demo`);
+  };
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -139,14 +145,12 @@ const ProjectDetail = () => {
             </div>
 
             {project.demoUrl && (
-              <a
-                href={project.demoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                onClick={handleDemoClick}
                 className="inline-block bg-electric-600 text-white px-6 py-3 rounded-full font-semibold hover:bg-electric-700 transition-colors"
               >
                 View Live Demo
-              </a>
+              </button>
             )}
           </div>
         </div>
