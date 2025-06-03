@@ -1,4 +1,4 @@
-import { LightBulb, GitBranch, MessageSquare } from 'lucide-react';
+import { Lightbulb, GitBranch, MessageSquare } from 'lucide-react';
 
 interface BuildStoryProps {
   projectId: 'saas-landing' | 'elevate-portfolio';
