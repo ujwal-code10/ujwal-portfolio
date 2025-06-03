@@ -1,73 +1,81 @@
 import AboutContent from './AboutContent';
+import { motion } from 'framer-motion';
+import { Code2, Palette, Zap } from 'lucide-react';
 
 const AboutSection = () => {
+  const skills = [
+    {
+      icon: <Code2 className="w-6 h-6" />,
+      title: "Modern Development",
+      description: "React, TypeScript, and modern web technologies"
+    },
+    {
+      icon: <Zap className="w-6 h-6" />,
+      title: "AI-Enhanced",
+      description: "Leveraging AI tools for smarter development"
+    },
+    {
+      icon: <Palette className="w-6 h-6" />,
+      title: "Design Focused",
+      description: "Clean, responsive, and user-friendly interfaces"
+    }
+  ];
+
   return (
-    <section id="about" className="py-16 lg:py-20 bg-gray-50 relative z-10">
+    <section id="about" className="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white relative z-10">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
-          <div className="animate-fade-in-up">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-navy-900 mb-6 lg:mb-8">
-              About Me
-            </h2>
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-12 lg:mb-20"
+        >
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 mb-6">
+            About Me
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-electric-500 to-coral-500 mx-auto rounded-full"></div>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <motion.div 
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
             <AboutContent />
-          </div>
-          
-          <div className="lg:ml-auto">
-            <div className="grid grid-cols-2 gap-4 sm:gap-6 lg:gap-8">
-              <div className="text-center">
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-electric-600 mb-1 lg:mb-2">Fast</div>
-                <p className="text-xs sm:text-sm lg:text-base text-gray-600">AI-accelerated development</p>
-              </div>
-              <div className="text-center">
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-coral-500 mb-1 lg:mb-2">Modern</div>
-                <p className="text-xs sm:text-sm lg:text-base text-gray-600">Latest tech & trends</p>
-              </div>
-              <div className="text-center">
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-electric-600 mb-1 lg:mb-2">Quality</div>
-                <p className="text-xs sm:text-sm lg:text-base text-gray-600">No compromise on standards</p>
-              </div>
-              <div className="text-center">
-                <div className="text-xl sm:text-2xl lg:text-3xl font-bold text-coral-500 mb-1 lg:mb-2">Original</div>
-                <p className="text-xs sm:text-sm lg:text-base text-gray-600">Unique, custom solutions</p>
-              </div>
-            </div>
-            
-            <div className="mt-8 lg:mt-12">
-              <div className="bg-gradient-to-br from-electric-100 to-coral-100 rounded-3xl p-4 sm:p-6 lg:p-8 shadow-xl">
-                <div className="space-y-4 lg:space-y-6">
-                  <div className="flex items-center space-x-3 sm:space-x-4">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-electric-500 rounded-xl flex items-center justify-center text-white font-bold text-xs sm:text-sm lg:text-lg">
-                      AI
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-navy-800 text-xs sm:text-sm lg:text-base">AI-Enhanced Tools</h3>
-                      <p className="text-gray-600 text-xs lg:text-sm">Lovable, Bolt, V0, ChatGPT</p>
-                    </div>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+            {skills.map((skill, index) => (
+              <motion.div
+                key={index}
+                whileHover={{ scale: 1.02 }}
+                className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              >
+                <div className="flex items-center space-x-4">
+                  <div className="p-3 bg-gradient-to-br from-electric-500 to-coral-500 rounded-lg text-white">
+                    {skill.icon}
                   </div>
-                  
-                  <div className="flex items-center space-x-3 sm:space-x-4">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-coral-500 rounded-xl flex items-center justify-center text-white font-bold text-xs sm:text-sm lg:text-lg">
-                      💻
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-navy-800 text-xs sm:text-sm lg:text-base">Tech Stack</h3>
-                      <p className="text-gray-600 text-xs lg:text-sm">React, TypeScript, Tailwind CSS</p>
-                    </div>
-                  </div>
-                  
-                  <div className="flex items-center space-x-3 sm:space-x-4">
-                    <div className="w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12 bg-navy-600 rounded-xl flex items-center justify-center text-white font-bold text-xs sm:text-sm lg:text-lg">
-                      🎨
-                    </div>
-                    <div>
-                      <h3 className="font-bold text-navy-800 text-xs sm:text-sm lg:text-base">Design Focus</h3>
-                      <p className="text-gray-600 text-xs lg:text-sm">Modern, responsive, user-friendly</p>
-                    </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-navy-900 mb-1">
+                      {skill.title}
+                    </h3>
+                    <p className="text-gray-600">
+                      {skill.description}
+                    </p>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
+              </motion.div>
+            ))}
+          </motion.div>
         </div>
       </div>
     </section>

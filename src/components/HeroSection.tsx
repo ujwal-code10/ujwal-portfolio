@@ -39,8 +39,8 @@ const HeroSection = () => {
               Freelance Web Designer & Developer
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-navy-200 mb-6 lg:mb-8 leading-relaxed max-w-lg">
-              I create stunning, modern websites using AI-enhanced development tools to deliver 
-              fast, custom solutions without compromising on quality or originality.
+            who blends clean design with efficient code to build responsive, high-performing websites.
+             From idea to launch, I focus on usability, speed, and detail—powered by modern tools and thoughtful decisions.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <button 
