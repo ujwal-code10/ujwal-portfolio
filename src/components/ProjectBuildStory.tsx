@@ -1,10 +1,37 @@
 import { Lightbulb, GitBranch, MessageSquare } from 'lucide-react';
 
 interface BuildStoryProps {
-  projectId: 'saas-landing' | 'elevate-portfolio';
+  projectId: 'portfolio-website' | 'saas-landing';
 }
 
 const buildStories = {
+  'portfolio-website': {
+    process: [
+      {
+        title: "Design Inspiration",
+        description: "Researched modern portfolio trends and used AI to analyze what makes a portfolio stand out. Focused on creating a clean, professional look that highlights the content."
+      },
+      {
+        title: "Component Structure",
+        description: "Planned the component hierarchy carefully to make the code maintainable. Used AI to suggest best practices for React component organization."
+      },
+      {
+        title: "Performance Focus",
+        description: "Made performance a priority from the start. Implemented lazy loading and optimized animations to ensure smooth user experience."
+      }
+    ],
+    feedback: [
+      "Initial navigation was confusing - simplified the menu structure",
+      "Added more visual hierarchy to project showcases",
+      "Improved project description clarity based on peer feedback"
+    ],
+    improvements: [
+      "Enhanced project filtering options",
+      "Added dark mode support",
+      "Improved contact form UX",
+      "Added loading states for better feedback"
+    ]
+  },
   'saas-landing': {
     process: [
       {
@@ -31,33 +58,6 @@ const buildStories = {
       "Implemented better form validation",
       "Enhanced accessibility features"
     ]
-  },
-  'elevate-portfolio': {
-    process: [
-      {
-        title: "Design Inspiration",
-        description: "Researched modern portfolio trends and used AI to analyze what makes a portfolio stand out. Focused on creating a clean, professional look that highlights the content."
-      },
-      {
-        title: "Component Structure",
-        description: "Planned the component hierarchy carefully to make the code maintainable. Used AI to suggest best practices for React component organization."
-      },
-      {
-        title: "Performance Focus",
-        description: "Made performance a priority from the start. Implemented lazy loading and optimized animations to ensure smooth user experience."
-      }
-    ],
-    feedback: [
-      "Initial navigation was confusing - simplified the menu structure",
-      "Added more visual hierarchy to project showcases",
-      "Improved project description clarity based on peer feedback"
-    ],
-    improvements: [
-      "Enhanced project filtering options",
-      "Added dark mode support",
-      "Improved contact form UX",
-      "Added loading states for better feedback"
-    ]
   }
 };
 
@@ -74,7 +74,7 @@ const ProjectBuildStory = ({ projectId }: BuildStoryProps) => {
         {/* Development Process */}
         <div>
           <h3 className="flex items-center text-lg font-semibold text-navy-900 mb-4">
-            <LightBulb className="w-5 h-5 text-electric-500 mr-2" />
+            <Lightbulb className="w-5 h-5 text-electric-500 mr-2" />
             Development Process
           </h3>
           <div className="space-y-4">

@@ -1,134 +1,100 @@
 import { ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const ProjectsSection = () => {
   const projects = [
     {
+      id: "portfolio-website",
+      src: "/laptop.jpg",
+      title: "Portfolio Website",
+      description: "Modern portfolio website built with React and Tailwind CSS. Features smooth animations, responsive design, and optimized performance.",
+      tech: ["React", "Tailwind", "Framer Motion"],
+      live: true,
+      imageAlt: "Portfolio Website Screenshot"
+    },
+    {
       id: "saas-landing",
       src: "/saas.jpg",
       title: "SaaS Landing Page",
-      description: "Responsive and modern landing page for a fictional project management SaaS product. Features clean layout, CTA focus, and built with Tailwind and React.",
+      description: "Responsive and modern landing page for a project management SaaS product. Features clean layout and strong CTA focus.",
       tech: ["React", "Tailwind", "Responsive"],
       live: true,
-      demoPath: "/project/saas-landing/demo"
+      imageAlt: "SaaS Landing Page Screenshot"
     },
     {
-      title: "Portfolio Website",
-      description: "Creative portfolio site for a photographer with gallery and booking system.",
-      tech: ["Next.js", "Image Optimization", "CMS"],
-      live: false
-    },
-    {
-      title: "SaaS Dashboard",
-      description: "Analytics dashboard for a startup with real-time data visualization.",
-      tech: ["React", "Charts", "API Integration"],
-      live: false
+      id: "task-manager",
+      title: "Task Management App",
+      description: "A clean and intuitive task management application with real-time updates and collaborative features.",
+      tech: ["React", "TypeScript", "Firebase"],
+      live: false,
+      imageAlt: "Task Manager App Preview"
     }
   ];
 
   return (
-    <section id="projects" className="py-16 lg:py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 lg:mb-16 animate-fade-in-up">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-navy-900 mb-4 lg:mb-6">
+    <section id="projects" className="py-12 lg:py-16 bg-white">
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-8 lg:mb-12">
+          <h2 className="text-3xl lg:text-4xl font-bold text-[#0A2472] mb-4">
             Featured Projects
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-            A showcase of my work using AI-enhanced development to create modern, 
+          <div className="w-20 h-1 bg-[#0066FF] mx-auto mb-4"></div>
+          <p className="text-base lg:text-lg text-[#0A2472] max-w-2xl mx-auto">
+            A showcase of my work using modern development practices to create 
             responsive websites that deliver exceptional user experiences.
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
-          {/* Elevate Project - hardcoded */}
-          <div className="animate-scale-in">
-            <div className="bg-gradient-to-br from-navy-50 to-electric-50 rounded-2xl lg:rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full">
-              <div className="h-32 sm:h-36 lg:h-40 relative overflow-hidden">
-                <img 
-                  src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=400&fit=crop&crop=top"
-                  alt="Elevate Portfolio Homepage Screenshot"
-                  className="w-full h-full object-cover object-top"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-              </div>
-              <div className="p-4 sm:p-6 lg:p-8">
-                <div className="flex items-center justify-between mb-3 lg:mb-4">
-                  <span className="bg-green-100 text-green-800 text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 rounded-full">
-                    Completed
-                  </span>
-                  <Link
-                    to="/project/elevate-portfolio/demo"
-                    className="text-electric-500 hover:text-electric-600 text-xs sm:text-sm font-medium"
-                  >
-                    Visit Live
-                  </Link>
-                </div>
-                <h3 className="text-base sm:text-lg lg:text-xl font-bold text-navy-900 mb-3 lg:mb-4">
-                  Personal Portfolio Page
-                </h3>
-                <p className="text-xs sm:text-sm lg:text-base text-gray-600 mb-4 lg:mb-6 leading-relaxed">
-                  Modern responsive portfolio landing page with clean animations and optimized design for all devices.
-                </p>
-                <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 lg:mb-6">
-                  <span className="bg-electric-100 text-electric-800 text-xs px-2 sm:px-3 py-1 rounded-full">React</span>
-                  <span className="bg-electric-100 text-electric-800 text-xs px-2 sm:px-3 py-1 rounded-full">Tailwind</span>
-                  <span className="bg-coral-100 text-coral-800 text-xs px-2 sm:px-3 py-1 rounded-full">Responsive</span>
-                </div>
-                <Link
-                  to="/project/elevate-portfolio"
-                  className="flex items-center text-electric-600 font-semibold hover:text-electric-700 transition-colors text-sm sm:text-base"
-                >
-                  View Project <ChevronRight size={16} className="ml-1 sm:ml-2" />
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* All other dynamic projects */}
+        <div className="grid sm:grid-cols-2 gap-6">
           {projects.map((project, index) => (
-            <div
+            <motion.div
               key={index}
-              className="animate-fade-in-up"
-              style={{ animationDelay: `${0.2 * (index + 2)}s` }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <div className="bg-gradient-to-br from-navy-50 to-electric-50 rounded-2xl lg:rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 h-full">
-                <div className="h-32 sm:h-36 lg:h-40 relative overflow-hidden">
+              <div className="bg-gray-50 rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                <div className="h-40 sm:h-48 relative overflow-hidden">
                   {project.src ? (
                     <img
                       src={project.src}
-                      alt={project.title}
-                      className="w-full h-full object-cover object-top"
+                      alt={project.imageAlt}
+                      className="w-full h-full object-cover object-center"
                     />
                   ) : (
-                    <div className="bg-gradient-to-br from-gray-100 to-gray-200 w-full h-full flex items-center justify-center">
-                      <div className="text-2xl sm:text-3xl lg:text-4xl opacity-50">🚧</div>
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#0A2472]/5 to-[#0066FF]/5 flex items-center justify-center">
+                      <div className="text-4xl">🚀</div>
                     </div>
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
                 </div>
-                <div className="p-4 sm:p-6 lg:p-8">
-                  <div className="flex items-center justify-between mb-3 lg:mb-4">
-                    <span className={`text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 rounded-full ${project.live ? 'bg-green-100 text-green-800' : 'bg-orange-100 text-orange-800'}`}>
-                      {project.live ? 'Completed' : 'Coming Soon'}
+                <div className="p-5">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="bg-[#0066FF]/10 text-[#0066FF] text-xs font-medium px-2.5 py-1 rounded-full">
+                      {project.live ? 'Live Project' : 'Coming Soon'}
                     </span>
-                    {project.live && project.demoPath && (
+                    {project.live && (
                       <Link
-                        to={project.demoPath}
-                        className="text-electric-500 hover:text-electric-600 text-xs sm:text-sm font-medium"
+                        to={`/project/${project.id}/demo`}
+                        className="text-[#0066FF] hover:text-[#0052CC] text-sm font-medium"
                       >
-                        Visit Live
+                        View Live
                       </Link>
                     )}
                   </div>
-                  <h3 className="text-base sm:text-lg lg:text-xl font-bold text-navy-900 mb-3 lg:mb-4">
+                  <h3 className="text-lg font-bold text-[#0A2472] mb-2">
                     {project.title}
                   </h3>
-                  <p className="text-xs sm:text-sm lg:text-base text-gray-600 mb-4 lg:mb-6 leading-relaxed">
+                  <p className="text-[#0A2472] text-sm mb-4 line-clamp-2">
                     {project.description}
                   </p>
-                  <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-4 lg:mb-6">
+                  <div className="flex flex-wrap gap-1.5 mb-4">
                     {project.tech.map((tech, i) => (
-                      <span key={i} className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">
+                      <span 
+                        key={i} 
+                        className="bg-[#0066FF]/5 text-[#0A2472] text-xs px-2.5 py-1 rounded-full"
+                      >
                         {tech}
                       </span>
                     ))}
@@ -136,14 +102,14 @@ const ProjectsSection = () => {
                   {project.live && project.id && (
                     <Link
                       to={`/project/${project.id}`}
-                      className="flex items-center text-electric-600 font-semibold hover:text-electric-700 transition-colors text-sm sm:text-base"
+                      className="inline-flex items-center text-[#0066FF] text-sm font-semibold hover:text-[#0052CC] transition-colors"
                     >
-                      View Project <ChevronRight size={16} className="ml-1 sm:ml-2" />
+                      View Details <ChevronRight className="ml-1 w-4 h-4" />
                     </Link>
                   )}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>

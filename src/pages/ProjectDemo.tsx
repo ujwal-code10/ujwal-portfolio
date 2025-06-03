@@ -2,13 +2,13 @@ import { useParams, Link } from 'react-router-dom';
 import { ChevronLeft } from 'lucide-react';
 
 const projects = {
+  'portfolio-website': {
+    title: "Portfolio Website",
+    demoUrl: "https://elevate-personal-page.vercel.app"
+  },
   'saas-landing': {
     title: "SaaS Landing Page",
     demoUrl: "https://saas-project-landing-page-pi.vercel.app/"
-  },
-  'elevate-portfolio': {
-    title: "Personal Portfolio Page",
-    demoUrl: "https://elevate-personal-page.vercel.app"
   }
 };
 
