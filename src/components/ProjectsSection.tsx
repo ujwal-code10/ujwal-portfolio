@@ -1,12 +1,13 @@
 import { ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const ProjectsSection = () => {
   const projects = [
     {
+      id: "saas-landing",
       src: "saas.jpg",
       title: "SaaS Landing Page",
       description: "Responsive and modern landing page for a fictional project management SaaS product. Features clean layout, CTA focus, and built with Tailwind and React.",
-      href: "https://saas-project-landing-page-pi.vercel.app/",
       tech: ["React", "Tailwind", "Responsive"],
       live: true
     },
@@ -74,14 +75,12 @@ const ProjectsSection = () => {
                   <span className="bg-electric-100 text-electric-800 text-xs px-2 sm:px-3 py-1 rounded-full">Tailwind</span>
                   <span className="bg-coral-100 text-coral-800 text-xs px-2 sm:px-3 py-1 rounded-full">Responsive</span>
                 </div>
-                <a
-                  href="https://elevate-personal-page.vercel.app"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Link
+                  to="/project/elevate-portfolio"
                   className="flex items-center text-electric-600 font-semibold hover:text-electric-700 transition-colors text-sm sm:text-base"
                 >
                   View Project <ChevronRight size={16} className="ml-1 sm:ml-2" />
-                </a>
+                </Link>
               </div>
             </div>
           </div>
@@ -113,9 +112,9 @@ const ProjectsSection = () => {
                     <span className={`text-xs sm:text-sm font-medium px-2 sm:px-3 py-1 rounded-full ${project.live ? 'bg-green-100 text-green-800' : 'bg-orange-100 text-orange-800'}`}>
                       {project.live ? 'Completed' : 'Coming Soon'}
                     </span>
-                    {project.live && project.href && (
+                    {project.live && (
                       <a
-                        href={project.href}
+                        href="https://saas-project-landing-page-pi.vercel.app/"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-electric-500 hover:text-electric-600 text-xs sm:text-sm font-medium"
@@ -137,15 +136,13 @@ const ProjectsSection = () => {
                       </span>
                     ))}
                   </div>
-                  {project.live && project.href && (
-                    <a
-                      href={project.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                  {project.live && project.id && (
+                    <Link
+                      to={`/project/${project.id}`}
                       className="flex items-center text-electric-600 font-semibold hover:text-electric-700 transition-colors text-sm sm:text-base"
                     >
                       View Project <ChevronRight size={16} className="ml-1 sm:ml-2" />
-                    </a>
+                    </Link>
                   )}
                 </div>
               </div>
