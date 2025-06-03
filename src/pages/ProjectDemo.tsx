@@ -30,8 +30,9 @@ const ProjectDemo = () => {
   }
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <div className="bg-white border-b shadow-sm py-2 px-4 flex items-center justify-between">
+    <div className="h-screen w-screen flex flex-col bg-white">
+      {/* Fixed header */}
+      <div className="h-12 bg-white border-b shadow-sm px-4 flex items-center justify-between fixed top-0 left-0 right-0 z-50">
         <Link
           to={`/project/${projectId}`}
           className="inline-flex items-center text-electric-600 hover:text-electric-700"
@@ -43,11 +44,19 @@ const ProjectDemo = () => {
         <div className="w-24"></div> {/* Spacer for centering */}
       </div>
       
-      <div className="flex-1">
+      {/* Iframe container with offset for header */}
+      <div className="flex-1 mt-12">
         <iframe
           src={project.demoUrl}
           title={`${project.title} Demo`}
           className="w-full h-full border-0"
+          style={{
+            height: 'calc(100vh - 48px)', // Subtracting header height
+            width: '100vw',
+            display: 'block'
+          }}
+          sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+          loading="eager"
         />
       </div>
     </div>
