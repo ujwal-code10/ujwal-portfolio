@@ -119,9 +119,12 @@ const WorkflowSection = () => {
               Let's discuss your project and see how modern tools can bring your vision to life 
               faster than traditional development methods.
             </p>
-            <button className="bg-gradient-to-r from-electric-500 to-coral-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-sm sm:text-base">
-              Start Your Project
-            </button>
+            <button 
+              onClick={() => scrollToSection('contact')}
+                  className="bg-gradient-to-r from-electric-500 to-coral-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
+              >
+                Start Your Project
+              </button>
           </div>
         </div>
       </div>
