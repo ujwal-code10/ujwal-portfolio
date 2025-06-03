@@ -19,11 +19,10 @@ export default {
 		},
 		extend: {
 			colors: {
+				// System colors (for components)
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
 				ring: 'hsl(var(--ring))',
-				background: 'hsl(var(--background))',
-				foreground: 'hsl(var(--foreground))',
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
 					foreground: 'hsl(var(--primary-foreground))'
@@ -52,35 +51,31 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				},
-				// Portfolio custom colors - updated to be more subtle
+
+				// 30% - Secondary Colors
 				navy: {
-					50: '#f5f7fa',
-					100: '#edf0f7',
-					500: '#2a4365',
-					600: '#1a365d',
-					700: '#1e3a8a',
-					800: '#1e293b',
+					50: '#f8fafc',
+					100: '#f1f5f9',
+					200: '#e2e8f0',
+					300: '#cbd5e1',
+					400: '#94a3b8',
+					500: '#64748b',
+					600: '#475569',
+					700: '#334155',
+					800: '#1e293b',  // Main secondary color
 					900: '#0f172a'
 				},
+
+				// 10% - Accent Colors
 				electric: {
-					400: '#93c5fd',  // Lighter blue
-					500: '#3b82f6',  // More muted blue
-					600: '#2563eb'   // Slightly darker
+					400: '#38bdf8',  // Lighter
+					500: '#00bcd4',  // Main accent
+					600: '#0891b2'   // Darker
 				},
 				coral: {
-					400: '#fca5a5',  // Lighter coral
-					500: '#f87171',  // More muted coral
-					600: '#ef4444'   // Slightly darker
+					400: '#ff8a8a',  // Lighter
+					500: '#ff6b6b',  // Main accent
+					600: '#e03131'   // Darker
 				}
 			},
 			borderRadius: {

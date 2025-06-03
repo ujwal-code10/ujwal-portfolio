@@ -12,22 +12,24 @@ import Footer from '../components/Footer';
 
 const Index = () => {
   return (
-    <div className="min-h-screen relative overflow-x-hidden">
+    <div className="min-h-screen w-full relative overflow-hidden">
       <Navigation />
-      <main className="relative w-full">
-        <div className="mx-auto">
+      <div className="flex flex-col items-center justify-center w-full">
+        <main className="w-full">
           <HeroSection />
-          <AboutSection />
-          <AIToolsSection />
-          <ProjectsSection />
-          <PricingSection />
-          <WorkflowSection />
-          <WorkProcessSection />
-          <CTASection />
-          <ContactSection />
-        </div>
-      </main>
-      <Footer />
+          <div className="max-w-[2000px] mx-auto">
+            <AboutSection />
+            <AIToolsSection />
+            <ProjectsSection />
+            <PricingSection />
+            <WorkflowSection />
+            <WorkProcessSection />
+            <CTASection />
+            <ContactSection />
+          </div>
+        </main>
+        <Footer />
+      </div>
     </div>
   );
 };

@@ -1,30 +1,7 @@
-import { Brain, Rocket, Wrench, Users } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Brain, Rocket, Wrench, Users } from 'lucide-react';
 
 const AboutContent = () => {
-  const qualities = [
-    {
-      icon: <Brain className="w-6 h-6" />,
-      title: "AI-Enhanced Learning",
-      description: "I combine traditional learning with AI tools to accelerate my growth. This modern approach helps me learn and adapt quickly to new technologies and challenges."
-    },
-    {
-      icon: <Wrench className="w-6 h-6" />,
-      title: "Smart Work Approach", 
-      description: "While I'm early in my journey, I work with the mindset of a professional developer. I focus on code quality, documentation, and maintainable solutions."
-    },
-    {
-      icon: <Users className="w-6 h-6" />,
-      title: "Future-Ready Skills",
-      description: "Though I haven't worked with clients yet, I build projects as if I'm serving real users. Every feature is thoughtfully considered and thoroughly tested."
-    },
-    {
-      icon: <Rocket className="w-6 h-6" />,
-      title: "Rapid Growth Mindset",
-      description: "I believe in constant improvement. Each project is an opportunity to learn something new and refine my skills further."
-    }
-  ];
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -46,89 +23,165 @@ const AboutContent = () => {
     }
   };
 
+  const cardVariants = {
+    initial: { 
+      scale: 1,
+      boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)"
+    },
+    hover: { 
+      scale: 1.02,
+      boxShadow: "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
+      transition: {
+        type: "spring",
+        stiffness: 300
+      }
+    }
+  };
+
+  const iconVariants = {
+    initial: { rotate: 0 },
+    hover: { 
+      rotate: 360,
+      transition: {
+        duration: 0.6,
+        ease: "easeInOut"
+      }
+    }
+  };
+
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-      className="space-y-12"
-    >
-      <motion.div 
-        variants={itemVariants}
-        className="prose prose-lg max-w-none bg-white rounded-2xl p-8 shadow-lg border border-gray-100"
+    <section className="max-w-7xl mx-auto">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="mb-32"
       >
-        <div className="max-w-3xl mx-auto space-y-6">
-          <p className="text-lg leading-relaxed text-gray-700">
-            I'm Ujwal, a frontend developer focused on building fast, responsive, and user-friendly websites. 
-            I blend modern technologies with a strong design sense to create clean, accessible digital experiences.
-          </p>
-          <p className="text-lg leading-relaxed text-gray-700">
-            My workflow is optimized for speed and quality, allowing me to go from idea to polished product efficiently. 
-            Whether it's prototyping, refining UI, or launching a full project, I prioritize usability, performance, 
-            and clarity in everything I build.
-          </p>
-          <p className="text-lg leading-relaxed text-gray-700">
-            I believe in thoughtful design, clean code, and staying ahead of the curve — constantly learning, 
-            iterating, and improving.
-          </p>
-        </div>
+        <h2 className="text-6xl font-bold text-[#0A2472] text-center mb-4">
+          About Me
+        </h2>
+        <div className="w-24 h-1 bg-[#0066FF] mx-auto mb-24"></div>
+        <motion.p variants={itemVariants} className="text-lg text-[#0A2472] max-w-4xl mx-auto text-center leading-relaxed">
+          I'm a web developer passionate about turning ideas into clean, modern websites. 
+          I specialize in building responsive UIs using React and Tailwind, with a strong 
+          focus on user experience and quality. I move fast, adapt to new tools, and enjoy 
+          solving real-world problems with simple, effective solutions.
+        </motion.p>
       </motion.div>
 
-      <motion.div 
-        variants={itemVariants}
-        className="grid sm:grid-cols-2 gap-6"
-      >
-        {qualities.map((quality, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Left Column */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="space-y-8"
+        >
           <motion.div 
-            key={index}
-            whileHover={{ scale: 1.02 }}
-            className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+            variants={itemVariants} 
+            initial="initial"
+            whileHover="hover"
+            className="bg-gray-50 rounded-2xl p-8 cursor-pointer transition-colors hover:bg-white"
           >
-            <div className="flex items-center mb-4">
-              <div className="p-3 bg-gradient-to-br from-electric-500 to-coral-500 rounded-lg text-white mr-4">
-                {quality.icon}
+            <motion.div variants={cardVariants} className="h-full">
+              <div className="flex items-start gap-4 mb-4">
+                <motion.div 
+                  variants={iconVariants}
+                  className="bg-[#0066FF] p-4 rounded-xl"
+                >
+                  <Brain className="w-6 h-6 text-white" />
+                </motion.div>
+                <h3 className="text-xl font-bold text-[#0A2472]">AI-Enhanced Learning</h3>
               </div>
-              <h3 className="text-lg font-bold text-navy-900">
-                {quality.title}
-              </h3>
-            </div>
-            <p className="text-gray-600 leading-relaxed">
-              {quality.description}
-            </p>
+              <p className="text-[#0A2472] transition-all duration-300 group-hover:text-[#0066FF]">
+                I combine traditional learning with AI tools to accelerate my growth. 
+                This modern approach helps me learn and adapt quickly to new technologies and challenges.
+              </p>
+            </motion.div>
           </motion.div>
-        ))}
-      </motion.div>
 
-      <motion.div 
-        variants={itemVariants}
-        className="bg-gradient-to-br from-electric-50 via-white to-coral-50 rounded-2xl p-8 border border-gray-100 shadow-lg"
-      >
-        <h3 className="text-xl font-bold text-navy-900 mb-6">
-          My Development Philosophy
-        </h3>
-        <ul className="space-y-4 max-w-3xl mx-auto">
-          {[
-            "Build for real users, even in practice projects",
-            "Focus on clean, maintainable code from day one",
-            "Embrace AI tools while understanding the fundamentals",
-            "Learn from every project and iteration"
-          ].map((item, index) => (
-            <motion.li 
-              key={index}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
-              className="flex items-center text-gray-700"
-            >
-              <span className="w-2 h-2 bg-gradient-to-r from-electric-500 to-coral-500 rounded-full mr-3 flex-shrink-0"></span>
-              {item}
-            </motion.li>
-          ))}
-        </ul>
-      </motion.div>
-    </motion.div>
+          <motion.div 
+            variants={itemVariants}
+            initial="initial"
+            whileHover="hover"
+            className="bg-gray-50 rounded-2xl p-8 cursor-pointer transition-colors hover:bg-white"
+          >
+            <motion.div variants={cardVariants} className="h-full">
+              <div className="flex items-start gap-4 mb-4">
+                <motion.div 
+                  variants={iconVariants}
+                  className="bg-[#0066FF] p-4 rounded-xl"
+                >
+                  <Users className="w-6 h-6 text-white" />
+                </motion.div>
+                <h3 className="text-xl font-bold text-[#0A2472]">Future-Ready Skills</h3>
+              </div>
+              <p className="text-[#0A2472] transition-all duration-300 group-hover:text-[#0066FF]">
+                Though I haven't worked with clients yet, I build projects as if I'm serving real users. 
+                Every feature is thoughtfully considered and thoroughly tested.
+              </p>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+
+        {/* Right Column */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="space-y-8"
+        >
+          <motion.div 
+            variants={itemVariants}
+            initial="initial"
+            whileHover="hover"
+            className="bg-gray-50 rounded-2xl p-8 cursor-pointer transition-colors hover:bg-white"
+          >
+            <motion.div variants={cardVariants} className="h-full">
+              <div className="flex items-start gap-4 mb-4">
+                <motion.div 
+                  variants={iconVariants}
+                  className="bg-[#0066FF] p-4 rounded-xl"
+                >
+                  <Wrench className="w-6 h-6 text-white" />
+                </motion.div>
+                <h3 className="text-xl font-bold text-[#0A2472]">Smart Work Approach</h3>
+              </div>
+              <p className="text-[#0A2472] transition-all duration-300 group-hover:text-[#0066FF]">
+                While I'm early in my journey, I work with the mindset of a professional developer. 
+                I focus on code quality, documentation, and maintainable solutions.
+              </p>
+            </motion.div>
+          </motion.div>
+
+          <motion.div 
+            variants={itemVariants}
+            initial="initial"
+            whileHover="hover"
+            className="bg-gray-50 rounded-2xl p-8 cursor-pointer transition-colors hover:bg-white"
+          >
+            <motion.div variants={cardVariants} className="h-full">
+              <div className="flex items-start gap-4 mb-4">
+                <motion.div 
+                  variants={iconVariants}
+                  className="bg-[#0066FF] p-4 rounded-xl"
+                >
+                  <Rocket className="w-6 h-6 text-white" />
+                </motion.div>
+                <h3 className="text-xl font-bold text-[#0A2472]">Rapid Growth Mindset</h3>
+              </div>
+              <p className="text-[#0A2472] transition-all duration-300 group-hover:text-[#0066FF]">
+                I believe in constant improvement. Each project is an opportunity to learn 
+                something new and refine my skills further.
+              </p>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      </div>
+    </section>
   );
 };
 

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 
@@ -19,68 +18,62 @@ const Navigation = () => {
     const element = document.getElementById(sectionId);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
-      setIsMobileMenuOpen(false); // Close mobile menu after clicking
+      setIsMobileMenuOpen(false);
     }
-  };
-
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      isScrolled ? 'bg-white shadow-sm' : 'bg-white'
     }`}>
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto">
+        <div className="flex items-center justify-between h-20 px-8">
           {/* Logo */}
-          <div className="flex items-center">
-            <span className="text-2xl font-bold bg-gradient-to-r from-navy-600 to-electric-500 bg-clip-text text-transparent">
+          <div className="flex-shrink-0">
+            <span className="text-2xl font-bold text-[#0A2472]">
               Ujwal
             </span>
           </div>
           
           {/* Desktop Navigation */}
-          <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
-              <button 
-                onClick={() => scrollToSection('hero')}
-                className="text-navy-700 hover:text-electric-500 transition-colors font-medium"
-              >
-                Home
-              </button>
-              <button 
-                onClick={() => scrollToSection('about')}
-                className="text-navy-700 hover:text-electric-500 transition-colors font-medium"
-              >
-                About
-              </button>
-              <button 
-                onClick={() => scrollToSection('projects')}
-                className="text-navy-700 hover:text-electric-500 transition-colors font-medium"
-              >
-                Projects
-              </button>
-              <button 
-                onClick={() => scrollToSection('services')}
-                className="text-navy-700 hover:text-electric-500 transition-colors font-medium"
-              >
-                Services
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')}
-                className="bg-gradient-to-r from-electric-500 to-navy-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition-all duration-300 transform hover:scale-105"
-              >
-                Contact
-              </button>
-            </div>
+          <div className="hidden md:flex md:items-center md:space-x-12">
+            <button 
+              onClick={() => scrollToSection('hero')}
+              className="text-[#0A2472] hover:text-[#0066FF] transition-colors font-medium"
+            >
+              Home
+            </button>
+            <button 
+              onClick={() => scrollToSection('about')}
+              className="text-[#0A2472] hover:text-[#0066FF] transition-colors font-medium"
+            >
+              About
+            </button>
+            <button 
+              onClick={() => scrollToSection('projects')}
+              className="text-[#0A2472] hover:text-[#0066FF] transition-colors font-medium"
+            >
+              Projects
+            </button>
+            <button 
+              onClick={() => scrollToSection('services')}
+              className="text-[#0A2472] hover:text-[#0066FF] transition-colors font-medium"
+            >
+              Services
+            </button>
+            <button 
+              onClick={() => scrollToSection('contact')}
+              className="bg-[#0066FF] text-white px-8 py-3 rounded-full hover:bg-[#0052CC] transition-all duration-300"
+            >
+              Contact
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
-              onClick={toggleMobileMenu}
-              className="text-navy-700 hover:text-electric-500 transition-colors p-2"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="text-[#0A2472] hover:text-[#0066FF] transition-colors p-2"
               aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -90,35 +83,35 @@ const Navigation = () => {
 
         {/* Mobile Navigation Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-md shadow-lg rounded-lg mt-2">
+          <div className="md:hidden absolute top-20 left-0 right-0 bg-white shadow-lg">
+            <div className="px-4 py-2 space-y-2">
               <button 
                 onClick={() => scrollToSection('hero')}
-                className="block w-full text-left px-3 py-2 text-navy-700 hover:text-electric-500 hover:bg-gray-50 transition-colors font-medium rounded"
+                className="block w-full text-left px-4 py-2 text-[#0A2472] hover:text-[#0066FF] hover:bg-gray-50 rounded-lg"
               >
                 Home
               </button>
               <button 
                 onClick={() => scrollToSection('about')}
-                className="block w-full text-left px-3 py-2 text-navy-700 hover:text-electric-500 hover:bg-gray-50 transition-colors font-medium rounded"
+                className="block w-full text-left px-4 py-2 text-[#0A2472] hover:text-[#0066FF] hover:bg-gray-50 rounded-lg"
               >
                 About
               </button>
               <button 
                 onClick={() => scrollToSection('projects')}
-                className="block w-full text-left px-3 py-2 text-navy-700 hover:text-electric-500 hover:bg-gray-50 transition-colors font-medium rounded"
+                className="block w-full text-left px-4 py-2 text-[#0A2472] hover:text-[#0066FF] hover:bg-gray-50 rounded-lg"
               >
                 Projects
               </button>
               <button 
                 onClick={() => scrollToSection('services')}
-                className="block w-full text-left px-3 py-2 text-navy-700 hover:text-electric-500 hover:bg-gray-50 transition-colors font-medium rounded"
+                className="block w-full text-left px-4 py-2 text-[#0A2472] hover:text-[#0066FF] hover:bg-gray-50 rounded-lg"
               >
                 Services
               </button>
               <button 
                 onClick={() => scrollToSection('contact')}
-                className="block w-full text-left px-3 py-2 bg-gradient-to-r from-electric-500 to-navy-600 text-white hover:shadow-lg transition-all duration-300 font-medium rounded mx-1 mt-2"
+                className="block w-full text-left px-4 py-2 bg-[#0066FF] text-white hover:bg-[#0052CC] rounded-lg"
               >
                 Contact
               </button>
