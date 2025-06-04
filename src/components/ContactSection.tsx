@@ -1,5 +1,7 @@
+'use client';
 import { useState } from 'react';
 import { Mail, ChevronRight } from 'lucide-react';
+import { type ChangeEvent, type FormEvent } from 'react';
 
 const ContactSection = () => {
   const [formData, setFormData] = useState({
@@ -22,24 +24,22 @@ const ContactSection = () => {
     e.preventDefault();
     setIsSubmitting(true);
     setSubmitStatus('idle');
-
+  
+    const formDataToSend = new FormData();
+    formDataToSend.append('name', formData.name);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('project', formData.project);
+    formDataToSend.append('message', formData.message);
+  
     try {
-      // Using Formspree with direct email integration
       const response = await fetch('https://formspree.io/f/mbjwkzrk', {
         method: 'POST',
+        body: formDataToSend,
         headers: {
-          'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          project: formData.project,
-          message: formData.message,
-          _replyto: formData.email,
-          _subject: `New project inquiry from ${formData.name}`,
-        }),
       });
-
+  
       if (response.ok) {
         setSubmitStatus('success');
         setFormData({ name: '', email: '', project: '', message: '' });
