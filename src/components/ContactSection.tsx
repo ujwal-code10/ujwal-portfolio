@@ -24,8 +24,8 @@ const ContactSection = () => {
     setSubmitStatus('idle');
 
     try {
-      // Using Formspree for form submission
-      const response = await fetch('https://formspree.io/f/xnnqgqpq', {
+      // Using Formspree with direct email integration
+      const response = await fetch('https://formspree.io/f/mbjwkzrk', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
