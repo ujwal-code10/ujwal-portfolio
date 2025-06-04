@@ -32,7 +32,7 @@ const ContactSection = () => {
     formDataToSend.append('message', formData.message);
   
     try {
-      const response = await fetch('https://formspree.io/f/mbjwkzrk', {
+      const response = await fetch('https://formspree.io/f/xnnvnpkw', {
         method: 'POST',
         body: formDataToSend,
         headers: {
