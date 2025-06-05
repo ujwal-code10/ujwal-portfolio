@@ -24,12 +24,29 @@ const ContactSection = () => {
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+    setSubmitStatus('idle');
+  
+    const formDataToSend = new FormData();
+    formDataToSend.append('name', formData.name);
+    formDataToSend.append('email', formData.email);
+    formDataToSend.append('project', formData.project);
+    formDataToSend.append('message', formData.message);
+  
     try {
-      // Here you would typically send the form data to your server
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulated delay
-      setSubmitStatus('success');
-      window.location.href = `mailto:${email}?subject=New Project Inquiry&body=Name: ${formData.name}%0D%0AProject Type: ${formData.projectType}%0D%0AMessage: ${formData.message}`;
+      const response = await fetch('https://formspree.io/f/mbjwkzrk', {
+        method: 'POST',
+        body: formDataToSend,
+        headers: {
+          'Accept': 'application/json',
+        },
+      });
+  
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ name: '', email: '', project: '', message: '' });
+      } else {
+        setSubmitStatus('error');
+      }
     } catch (error) {
       setSubmitStatus('error');
     } finally {
