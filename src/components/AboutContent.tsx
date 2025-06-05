@@ -63,7 +63,7 @@ const AboutContent = () => {
         </h2>
         <div className="w-24 h-1 bg-[#0066FF] mx-auto mb-24"></div>
         <motion.p variants={itemVariants} className="text-lg text-[#0A2472] max-w-4xl mx-auto text-center leading-relaxed">
-          I'm a web developer passionate about turning ideas into clean, modern websites. 
+          I'm a frontend developer passionate about turning ideas into clean, modern websites. 
           I specialize in building responsive UIs using React and Tailwind, with a strong 
           focus on user experience and quality. I move fast, adapt to new tools, and enjoy 
           solving real-world problems with simple, effective solutions.

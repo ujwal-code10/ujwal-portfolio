@@ -5,8 +5,7 @@ import AIToolsSection from '../components/AIToolsSection';
 import ProjectsSection from '../components/ProjectsSection';
 import PricingSection from '../components/PricingSection';
 import WorkflowSection from '../components/WorkflowSection';
-import WorkProcessSection from '../components/WorkProcessSection';
-import CTASection from '../components/CTASection';
+import TestimonialsSection from '../components/TestimonialsSection';
 import ContactSection from '../components/ContactSection';
 import Footer from '../components/Footer';
 
@@ -23,8 +22,7 @@ const Index = () => {
             <ProjectsSection />
             <PricingSection />
             <WorkflowSection />
-            <WorkProcessSection />
-            <CTASection />
+            <TestimonialsSection />
             <ContactSection />
           </div>
         </main>

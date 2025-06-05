@@ -36,11 +36,10 @@ const HeroSection = () => {
               </span>
             </h1>
             <h2 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-light mb-4 lg:mb-6 text-navy-100">
-              Freelance Web Designer & Developer
+              Frontend Developer & UI Designer
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-navy-200 mb-6 lg:mb-8 leading-relaxed max-w-lg">
-            who blends clean design with efficient code to build responsive, high-performing websites.
-             From idea to launch, I focus on usability, speed, and detail—powered by modern tools and thoughtful decisions.
+              I craft responsive, modern websites with clean design, smart layouts, and fast delivery—powered by React, Tailwind CSS, and AI-enhanced tools.
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               <button 

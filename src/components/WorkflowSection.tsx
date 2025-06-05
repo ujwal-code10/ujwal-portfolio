@@ -1,34 +1,75 @@
 import { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { Check, ArrowRight } from 'lucide-react';
 
 const WorkflowSection = () => {
-  const steps = [
+  const services = [
     {
-      number: "01",
-      title: "Discovery & Planning",
-      description: "We discuss your vision, goals, and requirements. I analyze your needs and create a project roadmap using AI-assisted planning tools.",
-      tools: ["Initial consultation", "Requirement analysis", "Project scope"]
+      title: "Landing Page",
+      description: "Perfect for showcasing a single product or service with impact. Ideal for businesses looking to establish their online presence quickly.",
+      features: [
+        "Custom responsive design",
+        "SEO optimization",
+        "Contact form integration",
+        "Analytics setup",
+        "Fast loading speed",
+        "Social media integration"
+      ]
     },
     {
-      number: "02", 
-      title: "AI-Enhanced Design",
-      description: "Using tools like V0 and Lovable, I rapidly prototype and iterate on designs, ensuring we get the perfect look and feel quickly.",
-      tools: ["V0 for rapid prototyping", "Design iterations", "Real-time feedback"]
+      title: "3-page Website",
+      description: "Comprehensive solution for small businesses needing a professional multi-page website to showcase their services.",
+      features: [
+        "3 custom designed pages",
+        "Mobile-first responsive design",
+        "Contact form & maps integration",
+        "SEO optimization",
+        "Social media integration",
+        "Analytics tracking"
+      ]
     },
     {
-      number: "03",
-      title: "Smart Development", 
-      description: "I leverage Bolt, Lovable, and other AI tools to write clean, efficient code while maintaining full control over quality and customization.",
-      tools: ["Lovable for UI development", "Bolt for rapid coding", "Quality assurance"]
+      title: "5-page Website",
+      description: "Complete website solution for businesses with multiple services and content needs. Perfect for establishing a strong online presence.",
+      features: [
+        "5 custom designed pages",
+        "Advanced SEO setup",
+        "Blog functionality",
+        "Newsletter integration",
+        "Social media feeds",
+        "Advanced analytics"
+      ]
     },
     {
-      number: "04",
-      title: "Testing & Launch",
-      description: "Thorough testing across devices and browsers, followed by deployment and handover with full documentation and support.",
-      tools: ["Cross-browser testing", "Mobile optimization", "Performance optimization"]
+      title: "Portfolio Site",
+      description: "Showcase your work with a beautiful, interactive portfolio website. Perfect for creatives and professionals.",
+      features: [
+        "Custom project gallery",
+        "Case study pages",
+        "Filtering system",
+        "Image optimization",
+        "Contact integration",
+        "Social media links"
+      ]
     }
   ];
+
+  const commonFeatures = [
+    "Modern & Clean Design",
+    "Mobile Responsive",
+    "Fast Loading Speed",
+    "SEO Optimized",
+    "Easy Content Updates",
+    "1 Month Support"
+  ];
+
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   const controls = useAnimation();
   const [ref, inView] = useInView({
@@ -42,135 +83,68 @@ const WorkflowSection = () => {
     }
   }, [controls, inView]);
 
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      transition: {
-        staggerChildren: 0.3
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: {
-      opacity: 0,
-      y: 20
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        ease: "easeOut"
-      }
-    }
-  };
-
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
     <section className="py-16 lg:py-20 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-12 lg:mb-16 animate-fade-in-up">
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold text-navy-900 mb-4 lg:mb-6">
-            How I Work
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12 lg:mb-16">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-navy-900 mb-4">
+            What I Offer
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto">
-            My AI-enhanced workflow ensures faster delivery without compromising on quality. 
-            Here's how I turn your vision into reality.
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            High-quality, frontend-focused websites designed with precision, built for performance, and delivered fast — powered by AI-enhanced tools for modern businesses and individuals.
           </p>
         </div>
-        
-        <div className="relative">
-          {/* Connection Line */}
-          <div className="hidden lg:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-electric-400 to-coral-400 rounded-full"></div>
-          
-          <div className="space-y-8 lg:space-y-16">
-            {steps.map((step, index) => (
-              <div 
-                key={index}
-                className={`flex flex-col lg:flex-row items-center gap-6 lg:gap-8 animate-fade-in-up ${
-                  index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                }`}
-                style={{ animationDelay: `${0.2 * index}s` }}
-              >
-                <div className="flex-1 lg:max-w-md">
-                  <div className={`${index % 2 === 0 ? 'lg:text-right lg:pr-6' : 'lg:text-left lg:pl-6'}`}>
-                    <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-r from-electric-500 to-coral-500 text-white text-lg sm:text-xl font-bold rounded-xl lg:rounded-2xl mb-4 lg:mb-6">
-                      {step.number}
+
+        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 lg:gap-12 mb-12">
+          {services.map((service, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden border border-gray-100 group"
+            >
+              <div className="p-6 lg:p-8">
+                <h3 className="text-xl lg:text-2xl font-bold text-navy-900 mb-4 group-hover:text-electric-600 transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-gray-600 mb-6">
+                  {service.description}
+                </p>
+
+                <div className="space-y-3 mb-8">
+                  {service.features.map((feature, i) => (
+                    <div key={i} className="flex items-start">
+                      <Check className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5" />
+                      <span className="text-gray-600 text-sm">{feature}</span>
                     </div>
-                    <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold text-navy-900 mb-3 lg:mb-4">
-                      {step.title}
-                    </h3>
-                    <p className="text-sm sm:text-base lg:text-lg text-gray-600 leading-relaxed mb-4 lg:mb-6">
-                      {step.description}
-                    </p>
-                    <div className="flex flex-wrap gap-1.5 sm:gap-2 justify-center lg:justify-start">
-                      {step.tools.map((tool, toolIndex) => (
-                        <span 
-                          key={toolIndex}
-                          className="bg-navy-100 text-navy-700 text-xs sm:text-sm px-2 sm:px-3 py-1 rounded-full"
-                        >
-                          {tool}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
+                  ))}
                 </div>
-                
-                <div className="relative z-10 lg:mx-6">
-                  <div className="w-16 h-16 sm:w-18 sm:h-18 lg:w-20 lg:h-20 bg-white border-4 border-electric-400 rounded-full flex items-center justify-center shadow-lg">
-                    <div className="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 bg-gradient-to-r from-electric-500 to-coral-500 rounded-full"></div>
-                  </div>
-                </div>
-                
-                <div className="flex-1 lg:max-w-md">
-                  <div className={`bg-gradient-to-br ${
-                    index % 2 === 0 
-                      ? 'from-electric-50 to-navy-50 lg:ml-6' 
-                      : 'from-coral-50 to-electric-50 lg:mr-6'
-                  } rounded-2xl lg:rounded-3xl p-4 sm:p-6 lg:p-8 shadow-lg`}>
-                    <div className="space-y-3 lg:space-y-4">
-                      <div className="flex items-center space-x-2 sm:space-x-3">
-                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-green-400 rounded-full"></div>
-                        <span className="text-xs sm:text-sm font-medium text-gray-700">AI-Powered Process</span>
-                      </div>
-                      <div className="flex items-center space-x-2 sm:space-x-3">
-                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-electric-400 rounded-full"></div>
-                        <span className="text-xs sm:text-sm font-medium text-gray-700">Human Creativity</span>
-                      </div>
-                      <div className="flex items-center space-x-2 sm:space-x-3">
-                        <div className="w-2.5 h-2.5 sm:w-3 sm:h-3 bg-coral-400 rounded-full"></div>
-                        <span className="text-xs sm:text-sm font-medium text-gray-700">Quality Assurance</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+
+                <button
+                  onClick={scrollToContact}
+                  className="w-full inline-flex items-center justify-center px-6 py-3 bg-navy-900 text-white rounded-xl hover:bg-electric-600 transition-colors duration-300 group"
+                >
+                  <span className="font-medium">Start Your Project</span>
+                  <ArrowRight className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <div className="bg-gray-50 rounded-2xl p-6 lg:p-8 max-w-3xl mx-auto">
+          <h3 className="text-lg font-semibold text-navy-900 mb-6 text-center">
+            All Projects Include
+          </h3>
+          <div className="grid sm:grid-cols-2 gap-4">
+            {commonFeatures.map((feature, index) => (
+              <div key={index} className="flex items-center">
+                <Check className="w-5 h-5 text-green-500 mr-2" />
+                <span className="text-gray-600">{feature}</span>
               </div>
             ))}
-          </div>
-        </div>
-        
-        <div className="mt-16 lg:mt-20 text-center animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
-          <div className="bg-gradient-to-r from-navy-900 to-navy-800 rounded-2xl lg:rounded-3xl p-6 sm:p-8 lg:p-12 text-white">
-            <h3 className="text-lg sm:text-xl lg:text-2xl xl:text-3xl font-bold mb-4 lg:mb-6">
-              Ready to experience AI-enhanced development?
-            </h3>
-            <p className="text-navy-200 text-sm sm:text-base lg:text-lg mb-6 lg:mb-8 max-w-2xl mx-auto">
-              Let's discuss your project and see how modern tools can bring your vision to life 
-              faster than traditional development methods.
-            </p>
-            <button 
-              onClick={scrollToContact}
-              className="bg-gradient-to-r from-electric-500 to-coral-500 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold hover:shadow-2xl transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
-            >
-              Start Your Project
-            </button>
           </div>
         </div>
       </div>
