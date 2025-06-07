@@ -1,122 +1,168 @@
+import { FiCheck, FiClock, FiZap } from 'react-icons/fi';
+import { Link } from 'react-scroll';
 
 const ServicesSection = () => {
   const services = [
     {
-      service: "Landing Page",
-      description: "1-page scroll website with clean design",
+      title: "Landing Page",
+      description: "Perfect for showcasing a product or service",
+      price: "$50",
       timeline: "2–3 days",
-      price: "$199",
-      popular: false
+      features: [
+        "Custom design from scratch",
+        "Responsive layout",
+        "Contact form integration",
+        "Basic SEO setup",
+        "Analytics integration"
+      ]
     },
     {
-      service: "Portfolio Website",
-      description: "Multi-section site to showcase personal or client work",
-      timeline: "3–5 days",
-      price: "$299",
-      popular: true
+      title: "3-page Website",
+      description: "Ideal for small businesses and startups",
+      price: "$120",
+      timeline: "4–5 days",
+      features: [
+        "3 custom pages",
+        "Interactive elements",
+        "Content management system",
+        "Contact form & maps",
+        "Social media integration"
+      ]
     },
     {
-      service: "Business Website",
-      description: "3–5 page site for local business",
-      timeline: "5–7 days",
-      price: "$499",
-      popular: false
+      title: "5-page Website",
+      description: "Complete solution for growing businesses",
+      price: "$200",
+      timeline: "6–7 days",
+      features: [
+        "5 custom pages",
+        "Advanced animations",
+        "Blog/News section",
+        "Newsletter integration",
+        "Advanced SEO setup"
+      ]
     },
     {
-      service: "AI to Code",
-      description: "Convert AI layout to working React site",
-      timeline: "1–2 days",
-      price: "$149",
-      popular: false
-    },
-    {
-      service: "Website Redesign",
-      description: "Revamp existing website with a modern look",
-      timeline: "3–6 days",
-      price: "$299",
-      popular: false
+      title: "Portfolio Website",
+      description: "Showcase your work with style",
+      price: "$80",
+      timeline: "3–4 days",
+      features: [
+        "Project gallery",
+        "Filterable categories",
+        "Case study pages",
+        "Bio/About section",
+        "Contact integration"
+      ]
     }
   ];
 
   return (
-    <section id="services" className="py-16 bg-gray-50">
-      <div className="max-w-6xl mx-auto px-6 lg:px-8">
-        <div className="text-center mb-12 animate-fade-in-up">
-          <h2 className="text-3xl lg:text-4xl font-bold text-navy-900 mb-4">
-            Services & Pricing
+    <section id="services" className="py-24 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Header */}
+        <div className="text-center max-w-3xl mx-auto mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-6 tracking-tight">
+            What I Offer
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Transparent, beginner-friendly pricing with fast delivery times. 
-            All projects include modern design, responsive layout, and AI-enhanced development.
+          <p className="text-xl text-gray-600 leading-relaxed">
+            Frontend services powered by clean design, modern tools, and fast delivery — perfect for individuals, startups, and small businesses.
           </p>
         </div>
-        
-        <div className="grid gap-4 max-w-4xl mx-auto">
+
+        {/* Service Cards Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {services.map((service, index) => (
-            <div 
-              key={index} 
-              className={`relative bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300 transform hover:-translate-y-1 animate-fade-in-up ${
-                service.popular ? 'ring-2 ring-electric-400' : ''
-              }`}
-              style={{ animationDelay: `${0.1 * index}s` }}
+            <div
+              key={index}
+              className="bg-white rounded-2xl shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 overflow-hidden"
             >
-              {service.popular && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <span className="bg-gradient-to-r from-electric-500 to-coral-500 text-white px-4 py-1 rounded-full text-sm font-semibold shadow-lg">
-                    Most Popular
+              <div className="p-8">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-gray-500 mb-6 leading-relaxed">
+                  {service.description}
+                </p>
+                <div className="flex items-center gap-3 mb-8">
+                  <span className="text-3xl font-bold text-indigo-600">
+                    {service.price}
                   </span>
-                </div>
-              )}
-              
-              <div className="p-6">
-                <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
-                  <div className="flex-1">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:gap-4 mb-3">
-                      <h3 className="text-xl font-bold text-navy-900">
-                        {service.service}
-                      </h3>
-                      <div className="text-2xl font-bold text-electric-600">
-                        {service.price}
-                      </div>
-                    </div>
-                    <p className="text-gray-600 text-base leading-relaxed mb-3">
-                      {service.description}
-                    </p>
-                  </div>
-                  
-                  <div className="md:ml-6">
-                    <div className="inline-flex items-center bg-navy-100 text-navy-800 px-3 py-1 rounded-full font-medium text-sm">
-                      ⏱️ {service.timeline}
-                    </div>
+                  <div className="flex items-center text-sm text-gray-500 bg-gray-50 px-3 py-1 rounded-full">
+                    <FiClock className="mr-2" />
+                    {service.timeline}
                   </div>
                 </div>
+                <ul className="space-y-4 mb-8">
+                  {service.features.map((feature, idx) => (
+                    <li key={idx} className="flex items-center text-gray-600">
+                      <FiCheck className="mr-3 text-indigo-500 flex-shrink-0" />
+                      <span className="text-sm">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link
+                  to="contact"
+                  smooth={true}
+                  duration={500}
+                  className="block w-full py-3 px-4 bg-indigo-600 hover:bg-indigo-700 text-white text-center font-semibold rounded-xl transition-colors duration-200 cursor-pointer"
+                >
+                  Start Your Project
+                </Link>
               </div>
             </div>
           ))}
         </div>
-        
-        <div className="mt-12 text-center animate-fade-in-up" style={{ animationDelay: '0.6s' }}>
-          <div className="bg-gradient-to-r from-electric-50 to-coral-50 rounded-2xl p-8 max-w-4xl mx-auto">
-            <h3 className="text-2xl font-bold text-navy-900 mb-6">
-              Why Choose AI-Enhanced Development?
-            </h3>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="text-center">
-                <div className="text-3xl mb-3">⚡</div>
-                <h4 className="font-bold text-navy-800 mb-2">Faster Delivery</h4>
-                <p className="text-gray-600">AI tools help me deliver quality work in half the time</p>
+
+        {/* Express Delivery Add-on */}
+        <div className="bg-gradient-to-r from-indigo-50 to-purple-50 rounded-2xl p-8 mb-16">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+            <div className="flex items-center gap-6">
+              <div className="bg-indigo-100 p-4 rounded-full">
+                <FiZap className="text-2xl text-indigo-600" />
               </div>
-              <div className="text-center">
-                <div className="text-3xl mb-3">💡</div>
-                <h4 className="font-bold text-navy-800 mb-2">Smart Solutions</h4>
-                <p className="text-gray-600">AI assists in creating optimal code and design patterns</p>
-              </div>
-              <div className="text-center">
-                <div className="text-3xl mb-3">🎯</div>
-                <h4 className="font-bold text-navy-800 mb-2">Better Results</h4>
-                <p className="text-gray-600">More time for creativity and problem-solving</p>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">
+                  Express Delivery Add-on
+                </h3>
+                <p className="text-gray-600">
+                  Need it faster? Get your project delivered within 24 hours
+                </p>
               </div>
             </div>
+            <div className="flex items-center gap-6">
+              <span className="text-2xl font-bold text-indigo-600">+$30</span>
+              <Link
+                to="contact"
+                smooth={true}
+                duration={500}
+                className="py-3 px-6 bg-indigo-600 hover:bg-indigo-700 text-white font-semibold rounded-xl transition-colors duration-200 cursor-pointer"
+              >
+                Add Express Delivery
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        {/* Shared Benefits */}
+        <div className="bg-white rounded-2xl p-8 shadow-sm">
+          <h3 className="text-xl font-semibold text-gray-900 mb-8 text-center">
+            All projects include:
+          </h3>
+          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+            {[
+              "Modern design",
+              "Mobile responsiveness",
+              "Fast loading",
+              "SEO-ready setup",
+              "Easy content updates",
+              "1-month support"
+            ].map((benefit, index) => (
+              <div key={index} className="flex items-center justify-center gap-3">
+                <FiCheck className="text-indigo-500 flex-shrink-0" />
+                <span className="text-gray-600">{benefit}</span>
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -124,4 +170,4 @@ const ServicesSection = () => {
   );
 };
 
-export default ServicesSection;
+export default ServicesSection; 

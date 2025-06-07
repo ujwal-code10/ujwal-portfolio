@@ -29,7 +29,7 @@ const ContactSection = () => {
     const formDataToSend = new FormData();
     formDataToSend.append('name', formData.name);
     formDataToSend.append('email', formData.email);
-    formDataToSend.append('project', formData.project);
+    formDataToSend.append('projectType', formData.projectType);
     formDataToSend.append('message', formData.message);
   
     try {
@@ -43,7 +43,7 @@ const ContactSection = () => {
   
       if (response.ok) {
         setSubmitStatus('success');
-        setFormData({ name: '', email: '', project: '', message: '' });
+        setFormData({ name: '', email: '', projectType: 'landing-page', message: '' });
       } else {
         setSubmitStatus('error');
       }
@@ -82,13 +82,6 @@ const ContactSection = () => {
       value: "Check out my repos",
       link: "https://github.com/ujwal-code10/ujwal-portfolio.git",
       actionText: "View Profile"
-    },
-    {
-      icon: MessageSquare,
-      title: "Discord",
-      value: "ujwal_patil",
-      action: () => navigator.clipboard.writeText("ujwal_patil"),
-      actionText: "Copy Username"
     }
   ];
 
