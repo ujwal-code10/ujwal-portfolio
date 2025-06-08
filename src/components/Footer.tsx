@@ -11,7 +11,7 @@ const Footer = () => {
               Ujwal
             </h3>
             <p className="text-xs md:text-sm text-gray-300 hover:text-white transition-colors duration-300">
-              Freelance Web Designer & Developer<br />
+              Freelance Frontend developer & UIs<br />
               AI-Enhanced Development Solutions
             </p>
           </div>
