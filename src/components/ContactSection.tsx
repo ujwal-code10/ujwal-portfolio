@@ -146,10 +146,10 @@ const ContactSection = () => {
                   onChange={handleChange}
                   className="w-full px-4 py-2 bg-navy-700/50 border border-navy-600 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-electric-500 focus:border-transparent"
                 >
-                  <option value="custom-website">Custom Website Development</option>
-                  <option value="ui-design">UI/UX Design</option>
-                  <option value="frontend-development">Frontend Development</option>
-                  <option value="responsive-design">Responsive Design & Mobile Optimization</option>
+                  <option value="custom-website">Landing Page</option>
+                  <option value="ui-design">3-page Website</option>
+                  <option value="frontend-development">5-page Website</option>
+                  <option value="responsive-design">Portfolio Website</option>
                 </select>
               </div>
 
